@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		15DCEFE52700D977003A1267 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DCEFE42700D977003A1267 /* FeedTableViewController.swift */; };
+		15DCEFEA2700F402003A1267 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DCEFE92700F402003A1267 /* Post.swift */; };
 		15E94F7826FFEC5F007B72E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E94F7726FFEC5F007B72E3 /* AppDelegate.swift */; };
 		15E94F7A26FFEC5F007B72E3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E94F7926FFEC5F007B72E3 /* SceneDelegate.swift */; };
 		15E94F7F26FFEC5F007B72E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E94F7D26FFEC5F007B72E3 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		15DCEFE42700D977003A1267 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
+		15DCEFE92700F402003A1267 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		15E94F7426FFEC5F007B72E3 /* CopyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15E94F7726FFEC5F007B72E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		15E94F7926FFEC5F007B72E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		15DCEFE62700EF46003A1267 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15DCEFE92700F402003A1267 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		15E94F6B26FFEC5F007B72E3 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +78,7 @@
 		15E94F7626FFEC5F007B72E3 /* CopyBook */ = {
 			isa = PBXGroup;
 			children = (
+				15DCEFE62700EF46003A1267 /* Model */,
 				15DCEFE32700D8FB003A1267 /* ViewController */,
 				15E94F8B26FFEEB8007B72E3 /* View */,
 				15E94F7726FFEC5F007B72E3 /* AppDelegate.swift */,
@@ -165,6 +176,7 @@
 				15E94F9226FFF069007B72E3 /* FeedTableViewCell.swift in Sources */,
 				15E94F7A26FFEC5F007B72E3 /* SceneDelegate.swift in Sources */,
 				15DCEFE52700D977003A1267 /* FeedTableViewController.swift in Sources */,
+				15DCEFEA2700F402003A1267 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
