@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		158717B5270A54C8009E2C3B /* GalleryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158717B4270A54C8009E2C3B /* GalleryCollectionViewController.swift */; };
 		158717B7270A567F009E2C3B /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 158717B6270A567F009E2C3B /* PhotoCollectionViewCell.swift */; };
+		15965632271370100032A48C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15965631271370100032A48C /* User.swift */; };
+		15965634271376A30032A48C /* UserListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15965633271376A30032A48C /* UserListTableViewController.swift */; };
+		1596563627138D0D0032A48C /* UserAlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596563527138D0D0032A48C /* UserAlbumsViewController.swift */; };
+		1596563827138F8C0032A48C /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1596563727138F8C0032A48C /* Album.swift */; };
 		15DCEFE52700D977003A1267 /* FeedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DCEFE42700D977003A1267 /* FeedTableViewController.swift */; };
 		15DCEFEA2700F402003A1267 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15DCEFE92700F402003A1267 /* Post.swift */; };
 		15E94F7826FFEC5F007B72E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E94F7726FFEC5F007B72E3 /* AppDelegate.swift */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		158717B4270A54C8009E2C3B /* GalleryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewController.swift; sourceTree = "<group>"; };
 		158717B6270A567F009E2C3B /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		15965631271370100032A48C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		15965633271376A30032A48C /* UserListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewController.swift; sourceTree = "<group>"; };
+		1596563527138D0D0032A48C /* UserAlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAlbumsViewController.swift; sourceTree = "<group>"; };
+		1596563727138F8C0032A48C /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		15DCEFE42700D977003A1267 /* FeedTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableViewController.swift; sourceTree = "<group>"; };
 		15DCEFE92700F402003A1267 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		15E94F7426FFEC5F007B72E3 /* CopyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CopyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +60,8 @@
 			children = (
 				15DCEFE42700D977003A1267 /* FeedTableViewController.swift */,
 				158717B4270A54C8009E2C3B /* GalleryCollectionViewController.swift */,
+				15965633271376A30032A48C /* UserListTableViewController.swift */,
+				1596563527138D0D0032A48C /* UserAlbumsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -60,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				15DCEFE92700F402003A1267 /* Post.swift */,
+				15965631271370100032A48C /* User.swift */,
+				1596563727138F8C0032A48C /* Album.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,9 +194,13 @@
 				158717B5270A54C8009E2C3B /* GalleryCollectionViewController.swift in Sources */,
 				15E94F9226FFF069007B72E3 /* FeedTableViewCell.swift in Sources */,
 				15E94F7A26FFEC5F007B72E3 /* SceneDelegate.swift in Sources */,
+				15965632271370100032A48C /* User.swift in Sources */,
 				158717B7270A567F009E2C3B /* PhotoCollectionViewCell.swift in Sources */,
 				15DCEFE52700D977003A1267 /* FeedTableViewController.swift in Sources */,
+				1596563627138D0D0032A48C /* UserAlbumsViewController.swift in Sources */,
+				1596563827138F8C0032A48C /* Album.swift in Sources */,
 				15DCEFEA2700F402003A1267 /* Post.swift in Sources */,
+				15965634271376A30032A48C /* UserListTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

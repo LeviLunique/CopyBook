@@ -11,6 +11,7 @@ class FeedTableViewController: UITableViewController {
     
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     
+    
     private var posts = [Post](){
         didSet{
             tableView.reloadData()
@@ -24,7 +25,17 @@ class FeedTableViewController: UITableViewController {
         
         FeedTableViewCell.register(in: tableView)
         
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(self.onRefresh(_:)), for: .valueChanged)
     }
+    
+    @objc private func onRefresh(_ sender: UIRefreshControl){
+        self.posts += posts
+        
+        tableView.reloadSections([0], with: .automatic)
+        sender.endRefreshing()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
