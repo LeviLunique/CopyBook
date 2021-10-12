@@ -11,9 +11,19 @@ private let reuseIdentifier = "Cell"
 
 class GalleryCollectionViewController: UICollectionViewController {
 
+    private let kBaseURL = "https://jsonplaceholder.typicode.com"
+    var album: Album?
+    
+    private var photos = [Photo](){
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView!.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,7 +32,29 @@ class GalleryCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let album = album {
+            navigationItem.title = album.title
+            
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if let album = album {
+            if let url = URL(string: "\(kBaseURL)/albums/\(album.id)/photos"){
+                let session = URLSession(
+                    configuration: URLSessionConfiguration.default,
+                    delegate: self,
+                    delegateQueue: OperationQueue.main)
+                session.dataTask(with: url).resume()
+                
+            }
+        }
+        
+    }
     /*
     // MARK: - Navigation
 
@@ -37,13 +69,14 @@ class GalleryCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 100
+        return photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
+        let photo = photos[indexPath.row]
         
-        cell.setup(with: URL(string: "http://lorempixel.com.br/200/200/?\(indexPath.row)")!)
+        cell.setup(with: URL(string: "\(photo.url)")!)
     
         // Configure the cell
     
@@ -84,6 +117,18 @@ class GalleryCollectionViewController: UICollectionViewController {
 
 }
 
+extension GalleryCollectionViewController: URLSessionDataDelegate{
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
+        if let response = dataTask.response as? HTTPURLResponse,
+           response.statusCode >= 200, response.statusCode < 300 {
+            
+            if let photos = try? JSONDecoder().decode([Photo].self, from: data){
+                self.photos = photos
+            }
+        }
+    }
+}
+
 extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -104,3 +149,4 @@ extension GalleryCollectionViewController: UICollectionViewDelegateFlowLayout{
     }
     
 }
+
