@@ -14,6 +14,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     private let kBaseURL = "https://jsonplaceholder.typicode.com"
     var album: Album?
     
+    
     private var photos = [Photo](){
         didSet {
             collectionView.reloadData()
@@ -23,7 +24,7 @@ class GalleryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView!.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        //self.collectionView!.register(PhotoCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -37,7 +38,6 @@ class GalleryCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         if let album = album {
             navigationItem.title = album.title
-            
         }
     }
     
@@ -69,14 +69,31 @@ class GalleryCollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return photos.count
+        
+        return 10
+            
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! PhotoCollectionViewCell
-        let photo = photos[indexPath.row]
         
-        cell.setup(with: URL(string: "\(photo.url)")!)
+        
+        let album = album
+        
+        for i in 0..<photos.count{
+            if photos[i].albumID == album?.id{
+                let photo = photos[indexPath.row]
+                cell.setup(with: URL(string: "\(photo.url)")!)
+            }
+        }
+        /*
+        if photos[indexPath.row].albumID == album?.id {
+            let photo = photos[indexPath.row].self
+            cell.setup(with: URL(string: "\(photo.url)")!)
+            
+        }
+         */
+        
     
         // Configure the cell
     

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+private let reuseIdentifier = "defaultUserAlbumCell"
 
 class UserAlbumsTableViewController: UITableViewController {
     
@@ -21,7 +22,7 @@ class UserAlbumsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "defaultUserAlbumCell")
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,30 +52,33 @@ class UserAlbumsTableViewController: UITableViewController {
         super.prepare(for: segue, sender: sender)
         
         if segue.identifier == "userPhotosSegue"{
-                        
+             
             if let cell = sender as? UITableViewCell,
                let index = tableView.indexPath(for: cell){
                 
                 let album = albums[index.row]
+                debugPrint("Album: \(album.title)")
                 
                 if let destination = segue.destination as? GalleryCollectionViewController {
                     destination.album = album
                 }
                 
+              
+                
             }
         }
     }
+     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return albums.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "defaultUserAlbumCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         
         let album = albums[indexPath.row]
         
         cell.textLabel?.text = album.title
-        
         
         return cell
     }

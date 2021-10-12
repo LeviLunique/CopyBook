@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="978.26086956521749" y="-6.0267857142857144"/>
         </scene>
-        <!--Galeria-->
+        <!--Gallery Collection View Controller-->
         <scene sceneID="WGf-rZ-GV1">
             <objects>
                 <collectionViewController id="cZf-Jr-YRa" customClass="GalleryCollectionViewController" customModule="CopyBook" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                             <outlet property="delegate" destination="cZf-Jr-YRa" id="kok-vv-DT5"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Galeria" id="r6z-3j-j7J"/>
+                    <navigationItem key="navigationItem" id="r6z-3j-j7J"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZN-gl-ND4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +144,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="lUe-qd-ivm" kind="show" identifier="userAlbumsSegue" id="hqh-g8-I3D"/>
+                                    <segue destination="7Gp-NR-1jv" kind="show" identifier="userAlbumsSegue" id="dnR-J9-rkN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -159,23 +159,23 @@
             </objects>
             <point key="canvasLocation" x="978" y="676"/>
         </scene>
-        <!--User Albums Table View Controller-->
-        <scene sceneID="fwA-fJ-PDK">
+        <!--Álbuns-->
+        <scene sceneID="trC-ZV-P8L">
             <objects>
-                <tableViewController id="lUe-qd-ivm" customClass="UserAlbumsTableViewController" customModule="CopyBook" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="aTd-MD-nKK">
+                <tableViewController id="7Gp-NR-1jv" customClass="UserAlbumsTableViewController" customModule="CopyBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="DX2-vI-hVR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="defaultUserAlbumCell" textLabel="qvo-wt-0Tk" style="IBUITableViewCellStyleDefault" id="Tu7-ic-5ju">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="defaultUserAlbumCell" textLabel="Cdp-Ru-orf" style="IBUITableViewCellStyleDefault" id="00i-CM-y0y">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tu7-ic-5ju" id="sLs-49-hvc">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="00i-CM-y0y" id="jFY-KJ-ArA">
                                     <rect key="frame" x="0.0" y="0.0" width="384.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qvo-wt-0Tk">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cdp-Ru-orf">
                                             <rect key="frame" x="20" y="0.0" width="356.5" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -185,20 +185,20 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="cZf-Jr-YRa" kind="show" identifier="userPhotosSegue" id="Jbo-DE-CD7"/>
+                                    <segue destination="cZf-Jr-YRa" kind="show" identifier="userPhotosSegue" id="Ynb-t6-2cD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="lUe-qd-ivm" id="TBk-yk-L6b"/>
-                            <outlet property="delegate" destination="lUe-qd-ivm" id="g3X-bW-Eqc"/>
+                            <outlet property="dataSource" destination="7Gp-NR-1jv" id="1AF-z1-S2L"/>
+                            <outlet property="delegate" destination="7Gp-NR-1jv" id="xSF-Tp-AZ4"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="y9o-x7-EJ8"/>
+                    <navigationItem key="navigationItem" title="Álbuns" id="1kJ-3t-fV0"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QU0-Tq-lrL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAe-OE-IFD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1886" y="676"/>
+            <point key="canvasLocation" x="1867" y="676"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="RAS-sC-fjB">
